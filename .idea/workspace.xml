@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="415b0f03-4704-499c-81b3-521b65d5e292" name="Changes" comment="Keyword support">
-      <change afterPath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/Expr.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/craftinginterpreters/tool/GenerateAst.java" afterDir="false" />
+    <list default="true" id="415b0f03-4704-499c-81b3-521b65d5e292" name="Changes" comment="AST Generator">
+      <change afterPath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/AstPrinter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657949097307</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="AST Generator">
+      <created>1658004199958</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1658004199958</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -128,6 +134,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial check-in of Scanner and sample file" />
     <MESSAGE value="Keyword support" />
-    <option name="LAST_COMMIT_MESSAGE" value="Keyword support" />
+    <MESSAGE value="AST Generator" />
+    <option name="LAST_COMMIT_MESSAGE" value="AST Generator" />
   </component>
 </project>
