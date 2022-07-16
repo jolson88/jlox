@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="415b0f03-4704-499c-81b3-521b65d5e292" name="Changes" comment="Initial check-in of Scanner and sample file">
+    <list default="true" id="415b0f03-4704-499c-81b3-521b65d5e292" name="Changes" comment="Keyword support">
+      <change afterPath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/Expr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/craftinginterpreters/tool/GenerateAst.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samples/tokens.lox" beforeDir="false" afterPath="$PROJECT_DIR$/samples/tokens.lox" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/Scanner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,8 +41,22 @@
     "settings.editor.selected.configurable": "preferences.sourceCode.Java"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="com.craftinginterpreters.lox.Lox" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.GenerateAst">
+    <configuration name="GenerateAst" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.craftinginterpreters.tool.GenerateAst" />
+      <module name="JLox" />
+      <option name="PROGRAM_PARAMETERS" value="src\com\craftinginterpreters\lox" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.craftinginterpreters.tool.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Lox" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.craftinginterpreters.lox.Lox" />
       <module name="JLox" />
       <option name="PROGRAM_PARAMETERS" value="samples\tokens.lox" />
@@ -56,9 +70,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.GenerateAst" />
+      <item itemvalue="Application.Lox" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.com.craftinginterpreters.lox.Lox" />
+        <item itemvalue="Application.GenerateAst" />
+        <item itemvalue="Application.Lox" />
       </list>
     </recent_temporary>
   </component>
@@ -78,7 +97,21 @@
       <option name="project" value="LOCAL" />
       <updated>1657941396957</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Initial check-in of Scanner and sample file">
+      <created>1657948973247</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1657948973247</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Keyword support">
+      <created>1657949097307</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1657949097307</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -94,6 +127,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial check-in of Scanner and sample file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial check-in of Scanner and sample file" />
+    <MESSAGE value="Keyword support" />
+    <option name="LAST_COMMIT_MESSAGE" value="Keyword support" />
   </component>
 </project>
