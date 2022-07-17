@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="415b0f03-4704-499c-81b3-521b65d5e292" name="Changes" comment="AST Generator">
-      <change afterPath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/AstPrinter.java" afterDir="false" />
+    <list default="true" id="415b0f03-4704-499c-81b3-521b65d5e292" name="Changes" comment="AST printer">
+      <change afterPath="$PROJECT_DIR$/samples/first.lox" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/Parser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/samples/tokens.lox" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/Lox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/Lox.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +43,7 @@
     "settings.editor.selected.configurable": "preferences.sourceCode.Java"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.GenerateAst">
+  <component name="RunManager" selected="Application.Lox">
     <configuration name="GenerateAst" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.craftinginterpreters.tool.GenerateAst" />
       <module name="JLox" />
@@ -58,7 +61,6 @@
     <configuration name="Lox" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.craftinginterpreters.lox.Lox" />
       <module name="JLox" />
-      <option name="PROGRAM_PARAMETERS" value="samples\tokens.lox" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.craftinginterpreters.lox.*" />
@@ -75,8 +77,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GenerateAst" />
         <item itemvalue="Application.Lox" />
+        <item itemvalue="Application.GenerateAst" />
       </list>
     </recent_temporary>
   </component>
@@ -117,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658004199958</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="AST printer">
+      <created>1658007335573</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1658007335573</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -135,6 +144,7 @@
     <MESSAGE value="Initial check-in of Scanner and sample file" />
     <MESSAGE value="Keyword support" />
     <MESSAGE value="AST Generator" />
-    <option name="LAST_COMMIT_MESSAGE" value="AST Generator" />
+    <MESSAGE value="AST printer" />
+    <option name="LAST_COMMIT_MESSAGE" value="AST printer" />
   </component>
 </project>
