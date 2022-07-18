@@ -1,5 +1,6 @@
 package com.craftinginterpreters.lox;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.craftinginterpreters.lox.TokenType.*;
@@ -14,27 +15,53 @@ class Parser {
     this.tokens = tokens;
   }
 
-  Expr parse() {
-    try {
-      Expr expression = expression();
-      if (!isAtEnd()) {
-        advance();
-        throw error(previous(), "Unexpected token");
-      }
-      return expression;
-    } catch (ParseError error) {
-      return null;
+  List<Stmt> parse() {
+    List<Stmt> statements = new ArrayList<>();
+    while (!isAtEnd()) {
+      statements.add(statement());
     }
+
+    return statements;
   }
 
   private Expr expression() {
     return equality();
   }
 
+  private Stmt statement() {
+    if (match(PRINT)) return printStatement();
+
+    return expressionStatement();
+  }
+
+  private Stmt printStatement() {
+    Expr value = expression();
+    consume(SEMICOLON, "Expected ';' after value.");
+    return new Stmt.Print(value);
+  }
+
+  private Stmt expressionStatement() {
+    Expr expr = expression();
+    consume(SEMICOLON, "Expected ';' after expression.");
+    return new Stmt.Expression(expr);
+  }
+
   private Expr equality() {
-    Expr expr = comparison();
+    Expr expr = bool();
 
     while (match(BANG_EQUAL, EQUAL_EQUAL)) {
+      Token operator = previous();
+      Expr right = bool();
+      expr = new Expr.Binary(expr, operator, right);
+    }
+
+    return expr;
+  }
+
+  private Expr bool() {
+    Expr expr = comparison();
+
+    while (match(AND, OR)) {
       Token operator = previous();
       Expr right = comparison();
       expr = new Expr.Binary(expr, operator, right);
