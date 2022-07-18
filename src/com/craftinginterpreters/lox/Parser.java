@@ -19,7 +19,7 @@ class Parser {
       Expr expression = expression();
       if (!isAtEnd()) {
         advance();
-        throw error(previous(), "Expected EOF");
+        throw error(previous(), "Unexpected token");
       }
       return expression;
     } catch (ParseError error) {
