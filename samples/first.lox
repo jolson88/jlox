@@ -1,7 +1,21 @@
 var a = 0;
-var b = 5;
+var b = 3;
+var continue = true;
 
-while (a < b) {
+while (a < 10 and continue) {
     print "Hello, World!";
     a = a + 1;
+
+    if (a >= b) {
+        continue = false;
+    }
+}
+
+for (var i = 0; i < 4; i = i + 1) {
+    print "Hello, For Loop!";
+}
+
+var j = 0;
+for ( ; j <= 4; j = j + 2) {
+    print "Hello, Optional Initializer";
 }
