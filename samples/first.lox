@@ -1,19 +1,17 @@
-var a = "global a";
-var b = "global b";
-var c = "global c";
-{
-  var a = "outer a";
-  var b = "outer b";
-  {
-    var a = "inner a";
-    print a;
-    print b;
-    print c;
-  }
-  print a;
-  print b;
-  print c;
+var a = true;
+var b = false;
+
+if (a or b) {
+  print "OR works!";
 }
-print a;
-print b;
-print c;
+
+b = true;
+if (a and b) {
+  print "AND works!";
+}
+
+if (false) {
+  print "Unreachable";
+} else {
+  print "ELSE works!";
+}
