@@ -24,6 +24,19 @@ class Interpreter implements Expr.Visitor<Object>,
     stmt.accept(this);
   }
 
+  private void executeBlock(List<Stmt> statements, Environment environment) {
+    Environment previous = this.environment;
+    try {
+      this.environment = environment;
+
+      for (Stmt statement : statements) {
+        execute(statement);
+      }
+    } finally {
+      this.environment = previous;
+    }
+  }
+
   private boolean isEqual(Object a, Object b) {
     if (a == null && b == null) return true;
     if (a == null) return false;
@@ -59,6 +72,12 @@ class Interpreter implements Expr.Visitor<Object>,
     }
 
     return object.toString();
+  }
+
+  @Override
+  public Void visitBlockStmt(Stmt.Block stmt) {
+    executeBlock(stmt.statements, new Environment(environment));
+    return null;
   }
 
   @Override
