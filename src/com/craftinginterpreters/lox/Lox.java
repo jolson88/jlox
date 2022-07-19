@@ -41,6 +41,8 @@ public class Lox {
       String line = reader.readLine();
       if (line == null) break;
       run(line);
+      Object lastExpressionValue = interpreter.getVariableByName("_");
+      System.out.println("\n-> " + interpreter.stringify(lastExpressionValue));
       hadError = false;
     }
   }
