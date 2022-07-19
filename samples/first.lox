@@ -1,17 +1,7 @@
-var a = true;
-var b = false;
+var a = 0;
+var b = 5;
 
-if (a or b) {
-  print "OR works!";
-}
-
-b = true;
-if (a and b) {
-  print "AND works!";
-}
-
-if (false) {
-  print "Unreachable";
-} else {
-  print "ELSE works!";
+while (a < b) {
+    print "Hello, World!";
+    a = a + 1;
 }
