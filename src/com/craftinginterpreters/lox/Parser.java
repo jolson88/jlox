@@ -70,6 +70,8 @@ class Parser {
   }
 
   private Stmt statement() {
+    if (match(BREAK)) return breakStatement();
+    if (match(CONTINUE)) return continueStatement();
     if (match(FOR)) return forStatement();
     if (match(IF)) return ifStatement();
     if (match(RETURN)) return returnStatement();
@@ -77,6 +79,18 @@ class Parser {
     if (match(LEFT_BRACE)) return new Stmt.Block(block());
 
     return expressionStatement();
+  }
+
+  private Stmt breakStatement() {
+    Token keyword = previous();
+    consume(SEMICOLON, "Expected ';' after break.");
+    return new Stmt.Break(keyword);
+  }
+
+  private Stmt continueStatement() {
+    Token keyword = previous();
+    consume(SEMICOLON, "Expected ';' after continue.");
+    return new Stmt.Continue(keyword);
   }
 
   private Stmt forStatement() {

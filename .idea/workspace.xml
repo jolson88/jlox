@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="415b0f03-4704-499c-81b3-521b65d5e292" name="Changes" comment="Added support for user-defined functions">
-      <change afterPath="$PROJECT_DIR$/samples/profiling.lox" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/Return.java" afterDir="false" />
+    <list default="true" id="415b0f03-4704-499c-81b3-521b65d5e292" name="Changes" comment="Support return statements">
+      <change afterPath="$PROJECT_DIR$/samples/controlFlow.lox" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samples/first.lox" beforeDir="false" afterPath="$PROJECT_DIR$/samples/functions.lox" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/Interpreter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/LoxFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/LoxFunction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/Return.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/FlowControlCommands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/Scanner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/Stmt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/Stmt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/TokenType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/TokenType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/craftinginterpreters/tool/GenerateAst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/craftinginterpreters/tool/GenerateAst.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +88,7 @@
     <configuration name="Lox Script" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.craftinginterpreters.lox.Lox" />
       <module name="JLox" />
-      <option name="PROGRAM_PARAMETERS" value="samples/profiling.lox" />
+      <option name="PROGRAM_PARAMETERS" value="samples/controlFlow.lox" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.craftinginterpreters.lox.*" />
@@ -238,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658373020637</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Support return statements">
+      <created>1658378636381</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1658378636381</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -270,6 +278,7 @@
     <MESSAGE value="Support for loops" />
     <MESSAGE value="Added support for native functions and function calls" />
     <MESSAGE value="Added support for user-defined functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added support for user-defined functions" />
+    <MESSAGE value="Support return statements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Support return statements" />
   </component>
 </project>

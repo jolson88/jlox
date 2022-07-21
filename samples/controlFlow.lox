@@ -1,0 +1,19 @@
+var i = 0;
+while (true) {
+    i = i + 1;
+    print(i);
+    if (i >= 10) {
+        break;
+    }
+}
+
+var skip = false;
+for (var j = 0; j <= 10; j = j + 1) {
+    if (skip == true) {
+        print("Continuing " + string(j));
+        skip = false;
+        j = j + 2;
+        continue;
+    }
+    skip = true;
+}

@@ -22,6 +22,10 @@ class Interpreter implements Expr.Visitor<Object>,
       }
     } catch (RuntimeError error) {
       Lox.runtimeError(error);
+    } catch (BreakCommand breakError) {
+      Lox.error(breakError.keyword, "Unexpected break statement outside of loop.");
+    } catch (ContinueCommand continueError) {
+      Lox.error(continueError.keyword, "Unexpected continue statement outside of loop.");
     }
   }
 
@@ -96,6 +100,16 @@ class Interpreter implements Expr.Visitor<Object>,
   }
 
   @Override
+  public Void visitBreakStmt(Stmt.Break stmt) {
+    throw new BreakCommand(stmt.keyword);
+  }
+
+  @Override
+  public Void visitContinueStmt(Stmt.Continue stmt) {
+    throw new ContinueCommand(stmt.keyword);
+  }
+
+  @Override
   public Void visitExpressionStmt(Stmt.Expression stmt) {
     evaluate(stmt.expression);
     return null;
@@ -123,7 +137,7 @@ class Interpreter implements Expr.Visitor<Object>,
     Object value = null;
     if (stmt.value != null) value = evaluate(stmt.value);
 
-    throw new Return(value);
+    throw new ReturnCommand(value);
   }
 
   @Override
@@ -139,8 +153,15 @@ class Interpreter implements Expr.Visitor<Object>,
 
   @Override
   public Void visitWhileStmt(Stmt.While stmt) {
-    while (isTruthy(evaluate(stmt.condition))) {
-      execute(stmt.body);
+    Boolean breakRequested = false;
+    while (isTruthy(evaluate(stmt.condition)) && !breakRequested) {
+      try {
+        execute(stmt.body);
+      } catch (BreakCommand breakCommand) {
+        breakRequested = true;
+      } catch (ContinueCommand continueCommand) {
+        // Do nothing, just start loop over
+      }
     }
     return null;
   }
