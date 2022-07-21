@@ -1,14 +1,18 @@
 package com.craftinginterpreters.lox;
 
+import java.util.ArrayList;
 import java.util.List;
 
 class Interpreter implements Expr.Visitor<Object>,
                              Stmt.Visitor<Void> {
-  private Environment environment;
+  final Environment globals = new Environment();
+  private Environment environment = globals;
 
   Interpreter() {
-    this.environment = new Environment();
-    this.environment.define("_", null);
+    this.globals.define("_", null);
+    this.globals.define("clock", NativeFunctions.ClockFunction);
+    this.globals.define("print", NativeFunctions.PrintFunction);
+    this.globals.define("string", NativeFunctions.StringFunction);
   }
 
   void interpret(List<Stmt> statements) {
@@ -108,13 +112,6 @@ class Interpreter implements Expr.Visitor<Object>,
   }
 
   @Override
-  public Void visitPrintStmt(Stmt.Print stmt) {
-    Object value = evaluate(stmt.expression);
-    System.out.println(stringify(value));
-    return null;
-  }
-
-  @Override
   public Void visitVarStmt(Stmt.Var stmt) {
     Object value = null;
     if (stmt.initializer != null) {
@@ -183,6 +180,27 @@ class Interpreter implements Expr.Visitor<Object>,
       default:
         throw new RuntimeError(expr.operator, "Unexpected token");
     }
+  }
+
+  @Override
+  public Object visitCallExpr(Expr.Call expr) {
+    Object callee = evaluate(expr.callee);
+
+    List<Object> arguments = new ArrayList<>();
+    for (Expr argument : expr.arguments) {
+      arguments.add(evaluate(argument));
+    }
+
+    if (!(callee instanceof LoxCallable)) {
+      throw new RuntimeError(expr.paren, "Can only call functions and classes.");
+    }
+
+    LoxCallable function = (LoxCallable)callee;
+    if (arguments.size() != function.arity()) {
+      throw new RuntimeError(expr.paren, "Expected " + function.arity() + " arguments but got " + arguments.size() + ".");
+    }
+
+    return function.call(this, arguments);
   }
 
   @Override

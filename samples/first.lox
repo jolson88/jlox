@@ -1,21 +1,8 @@
-var a = 0;
-var b = 3;
-var continue = true;
-
-while (a < 10 and continue) {
-    print "Hello, World!";
-    a = a + 1;
-
-    if (a >= b) {
-        continue = false;
-    }
+var start = clock();
+var count = 100000;
+for (var i = 0; i <= count; i = i + 1) {
+  print(".");
 }
+var end = clock();
 
-for (var i = 0; i < 4; i = i + 1) {
-    print "Hello, For Loop!";
-}
-
-var j = 0;
-for ( ; j <= 4; j = j + 2) {
-    print "Hello, Optional Initializer";
-}
+print("Iterated over " + string(count) + " elements in " + string(end - start) + "ms");
