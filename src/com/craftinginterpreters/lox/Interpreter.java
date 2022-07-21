@@ -53,7 +53,7 @@ class Interpreter implements Expr.Visitor<Object>,
     stmt.accept(this);
   }
 
-  private void executeBlock(List<Stmt> statements, Environment environment) {
+  void executeBlock(List<Stmt> statements, Environment environment) {
     Environment previous = this.environment;
     try {
       this.environment = environment;
@@ -98,6 +98,13 @@ class Interpreter implements Expr.Visitor<Object>,
   @Override
   public Void visitExpressionStmt(Stmt.Expression stmt) {
     evaluate(stmt.expression);
+    return null;
+  }
+
+  @Override
+  public Void visitFunctionStmt(Stmt.Function stmt) {
+    LoxFunction function = new LoxFunction(stmt);
+    environment.define(stmt.name.lexeme, function);
     return null;
   }
 

@@ -1,8 +1,14 @@
 var start = clock();
 var count = 100000;
 for (var i = 0; i <= count; i = i + 1) {
-  print(".");
+    print(".");
 }
 var end = clock();
 
 print("Iterated over " + string(count) + " elements in " + string(end - start) + "ms");
+
+fun sayHello(first, last) {
+    print("Hi, " + first + " " + last + "!");
+}
+
+sayHello("Dear", "Reader");

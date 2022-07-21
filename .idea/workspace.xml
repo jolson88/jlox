@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="415b0f03-4704-499c-81b3-521b65d5e292" name="Changes" comment="Support for loops">
-      <change afterPath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/LoxCallable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/NativeFunctions.java" afterDir="false" />
+    <list default="true" id="415b0f03-4704-499c-81b3-521b65d5e292" name="Changes" comment="Added support for native functions and function calls">
+      <change afterPath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/LoxFunction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/samples/first.lox" beforeDir="false" afterPath="$PROJECT_DIR$/samples/first.lox" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/Expr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/Expr.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/Interpreter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/Scanner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/Stmt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/Stmt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/TokenType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/craftinginterpreters/lox/TokenType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/craftinginterpreters/tool/GenerateAst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/craftinginterpreters/tool/GenerateAst.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -220,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658205648328</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Added support for native functions and function calls">
+      <created>1658368090997</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1658368090997</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -250,6 +253,7 @@
     <MESSAGE value="Add if/else statements" />
     <MESSAGE value="Add while loops" />
     <MESSAGE value="Support for loops" />
-    <option name="LAST_COMMIT_MESSAGE" value="Support for loops" />
+    <MESSAGE value="Added support for native functions and function calls" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added support for native functions and function calls" />
   </component>
 </project>

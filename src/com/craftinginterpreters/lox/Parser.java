@@ -28,6 +28,7 @@ class Parser {
 
   private Stmt declaration() {
     try {
+      if (match(FUN)) return function("function");
       if (match(VAR)) return varDeclaration();
 
       return statement();
@@ -35,6 +36,25 @@ class Parser {
       synchronize();
       return null;
     }
+  }
+
+  private Stmt.Function function(String kind) {
+    Token name = consume(IDENTIFIER, "Expected " + kind + " name.");
+    consume(LEFT_PAREN, "Expected '(' after " + kind + " name.");
+    List<Token> parameters = new ArrayList<>();
+    if (!check(RIGHT_PAREN)) {
+      do {
+        if (parameters.size() > 255) {
+          error(peek(), "Can't have more than 255 parameters.");
+        }
+        parameters.add(consume(IDENTIFIER, "Expected parameter name."));
+      } while (match(COMMA));
+    }
+    consume(RIGHT_PAREN, "Expected ')' after parameters.");
+
+    consume(LEFT_BRACE, "Expected '{' before " + kind + " body.");
+    List<Stmt> body = block();
+    return new Stmt.Function(name, parameters, body);
   }
 
   private Stmt varDeclaration() {
