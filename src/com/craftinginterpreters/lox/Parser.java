@@ -72,6 +72,7 @@ class Parser {
   private Stmt statement() {
     if (match(FOR)) return forStatement();
     if (match(IF)) return ifStatement();
+    if (match(RETURN)) return returnStatement();
     if (match(WHILE)) return whileStatement();
     if (match(LEFT_BRACE)) return new Stmt.Block(block());
 
@@ -130,6 +131,17 @@ class Parser {
     }
 
     return new Stmt.If(condition, thenBranch, elseBranch);
+  }
+
+  private Stmt returnStatement() {
+    Token keyword = previous();
+    Expr value = null;
+    if (!check(SEMICOLON)) {
+      value = expression();
+    }
+
+    consume(SEMICOLON, "Expected ';' after return value.");
+    return new Stmt.Return(keyword, value);
   }
 
   private Stmt whileStatement() {
